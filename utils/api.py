@@ -41,3 +41,31 @@ class GoogleMapsAPI:
         result_get = HttpMethods.get(get_url)
         print(result_get.text)
         return result_get
+
+    @staticmethod
+    def update_new_palace(place_id):
+        """Метод для изменения новой локации"""
+        put_resource = "/maps/api/place/update/json"  # ресурс метода put
+        put_url = base_url + put_resource + key
+        print(put_url)
+        json_create_new_place = {
+            "place_id": place_id,
+            "address": "100 Lenina street, RU",
+            "key": "qaclick123"
+        }
+        result_put = HttpMethods.put(put_url, json_create_new_place)
+        print(result_put.text)
+        return result_put
+
+    @staticmethod
+    def delete_new_palace(place_id):
+        """Метод для удаления новой локации"""
+        del_resource = "/maps/api/place/delete/json"  # ресурс метода delete
+        del_url = base_url + del_resource + key
+        print(del_url)
+        json_delete_new_place = {
+            "place_id": place_id
+        }
+        result_del = HttpMethods.put(del_url, json_delete_new_place)
+        print(result_del.text)
+        return result_del
