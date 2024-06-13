@@ -7,7 +7,7 @@ class TestCreatePlace:
     """Создание изменение и удаление новой локации"""
     def test_create_new_place(self):
         print("Метод ПОСТ")
-        result_post: Response = GoogleMapsAPI.create_new_palace()
+        result_post = GoogleMapsAPI.create_new_palace()
         check_post = result_post.json()
         place_id = check_post.get("place_id")
         print("Метод GET")
