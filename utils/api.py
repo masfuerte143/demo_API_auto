@@ -66,6 +66,6 @@ class GoogleMapsAPI:
         json_delete_new_place = {
             "place_id": place_id
         }
-        result_del = HttpMethods.put(del_url, json_delete_new_place)
+        result_del = HttpMethods.delete(del_url, json_delete_new_place)
         print(result_del.text)
         return result_del
